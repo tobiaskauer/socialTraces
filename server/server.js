@@ -1,12 +1,8 @@
 const express = require("express");
 const cors = require("cors");
-
-
+require('dotenv').config()
 const bodyParser = require("body-parser");
 //const multer = require("multer");
-
-
-
 
 const app = express();
 
@@ -17,16 +13,13 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-//app.use(multer({dest:'./static'}).single('image'))
 app.use(bodyParser.json());
 
-
-
-require("./routes/trace.routes")(app);
-
+//use multer to store POST images to /static and serve them there
+//app.use(multer({dest:'./static'}).single('image'))
 //app.use('/static', express.static('static'))
 
+require("./routes/trace.routes")(app);
 
 
 // set port, listen for requests
@@ -47,9 +40,3 @@ db.sequelize.sync(
   .catch((err) => {
     console.log("Failed to sync db: " + err.message);
   });
-
-  //https://www.bezkoder.com/node-js-express-sequelize-mysql/
-
-
-
-//  const fs = require('fs');

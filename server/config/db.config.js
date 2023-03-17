@@ -2,13 +2,13 @@
 module.exports = {
     port: process.env.PORT || 3000,
     db: {
-      database: process.env.DB_NAME || 'socialTraces', //database name
-      user: process.env.DB_USER || 'socialTraces',
-      password: process.env.DB_USER || 'rxy%P0#S!fs0',
+      database: process.env.DB_NAME || '', //database name
+      user: process.env.DB_USER || '',
+      password: process.env.DB_USER || '',
       options: {
-        dialect: process.env.DIALECT || 'sqlite',
-        host: process.env.HOST || 'localhost',
-        storage: process.env.STORAGE || './socialTraces.sqlite',
+        dialect: process.env.DIALECT || '',
+        host: process.env.HOST || '',
+        storage: process.env.STORAGE || '',
         logging: false
       }
     }
